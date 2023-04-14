@@ -1,0 +1,67 @@
+<div class="page-area">
+    <div class="text-center">
+        <h2>Buy Products</h2>
+    </div>
+
+    <div class="alert alert-secondary border d-flex align-itme-center" *ngIf="addedProduct">
+        <strong class="text-success">{{addedProduct}}</strong> &nbsp; is Selected and Added in Cart
+      <button class="btn btn-success ml-auto">Checkout</button>
+    </div>
+
+    <hr class="mb-3">
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Mobile</h2>
+                    <ul>
+                        <li>14,999</li>
+                        <li>Blue</li>
+                    </ul>
+    
+                    <button class="btn btn-success" (click)="onSelectProduct('Mobile')">Select this Product</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Laptop</h2>
+                    <ul>
+                        <li>42,499</li>
+                        <li>Gray</li>
+                    </ul>
+    
+                    <button class="btn btn-success" (click)="onSelectProduct('Laptop')">Select this Product</button>
+    
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Television</h2>
+                    <ul>
+                        <li>35,499</li>
+                        <li>Black</li>
+                    </ul>
+    
+                    <button class="btn btn-success" (click)="onSelectProduct('Television')">Select this Product</button>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-child-user [productSelected]="proSelected"
+     [selectProduct]="selProduct"
+    (addedProduct)="onAddedProduct($event)" ></app-child-user>
+   
+</div>
+
+
+
+
+
+
